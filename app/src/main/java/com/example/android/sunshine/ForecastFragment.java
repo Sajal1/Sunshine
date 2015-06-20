@@ -31,8 +31,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -78,7 +76,7 @@ public class ForecastFragment extends Fragment {
         // weatherTask.execute();
         // weatherTask.execute("94043");
         SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String location=prefs.getString(getString(R.string.pref_location_key),getString(R.string.pref_location_default));
+        String location=prefs.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
         weatherTask.execute(location);
     }
 
@@ -95,7 +93,7 @@ public class ForecastFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
-        String[] forecastArray = {
+       /* String[] forecastArray = {
                 "today - sunny - 88/63",
                 "tomorrow - rainy - 54/34",
                 "wednesday - cloudy - 34/56",
@@ -123,12 +121,14 @@ public class ForecastFragment extends Fragment {
 
         };
 
-        List<String> weekForecast = new ArrayList<String>(Arrays.asList(forecastArray));
+        List<String> weekForecast = new ArrayList<String>(Arrays.asList(forecastArray));*/
+
+
         mForecastAdapter = new ArrayAdapter<String>(
                 getActivity(),
                 R.layout.list_item_forcast,
                 R.id.list_item_forecast_textview,
-                weekForecast
+                new ArrayList<String>()
         );
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
