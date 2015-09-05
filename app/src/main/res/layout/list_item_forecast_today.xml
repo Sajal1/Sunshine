@@ -7,8 +7,8 @@
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:background="@drawable/touch_selector"
-    android:padding="16dp">
+    android:background="@drawable/todat_touch_selector"
+    >
 
 
 
